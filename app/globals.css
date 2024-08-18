@@ -18,16 +18,41 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: white;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@keyframes rainbow-border {
+  0% {
+    border-color: red;
+  }
+  16.6% {
+    border-color: orange;
+  }
+  33.3% {
+    border-color: yellow;
+  }
+  50% {
+    border-color: green;
+  }
+  66.6% {
+    border-color: blue;
+  }
+  83.3% {
+    border-color: indigo;
+  }
+  100% {
+    border-color: violet;
+  }
+}
+
+.hover\:animate-rainbow-border:hover {
+  animation: rainbow-border 1s linear infinite;
+  border: 1px solid;
+  border-color: transparent;
 }
